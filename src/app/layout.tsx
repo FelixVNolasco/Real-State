@@ -17,10 +17,12 @@ export default function RootLayout({
       */}
       <head />
       <body className='flex flex-col h-screen justify-between'>
-        <Navbar />
-        <div className='flex flex-row justify-center'>
-          {/* <Sidebar /> */}
-          {children}
+        <div className='flex flex-col gap-4'>
+          <Navbar />
+          <div className='flex flex-row h-full justify-center'>
+            {/* <Sidebar /> */}
+            {children}
+          </div>
         </div>
         <Footer />
       </body>
