@@ -1,16 +1,16 @@
 // import Image from 'next/image'
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
+Image
 
+export default function HouseCard({ house }: { house: any }) {
 
-export default function HouseCard({house} : {house:any}) {
-
-    const { ID, title, price, location, status } = house;
+    const { ID, title, price, location, status, photo_url } = house;
 
     return (
         <Link href={`/houses/${ID}`} className="relative w-80 p-2 flex flex-col">
-            <div className='rounded-lg bg-slate-100 h-48 w-full mb-2'>
-            </div>
+            <Image src={photo_url} height={100} width={100} alt='' className='rounded-lg bg-slate-100 h-48 w-full mb-2' />             
             <div className="flex flex-col">
                 <div className="flex flex-col">
                     <span className='text-slate-800 font-semibold text-2xl'>{title}</span>
@@ -28,6 +28,6 @@ export default function HouseCard({house} : {house:any}) {
             <div className='absolute top-0 left-0'>
                 <span className='bg-slate-200 w-max p-1 rounded-md text-slate-800 font-semibold'>{price}</span>
             </div>
-        </Link>        
+        </Link>
     )
 }

@@ -14,8 +14,6 @@ export default async function page({ params }: any) {
 
     const { id } = params;
     const house = await getHouse(id);
-
-    console.log(house);
     
     const {title, price, location, description, photo_url, status, agent_id, HouseDetails} = house;
 

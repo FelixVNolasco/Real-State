@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["ssl.cdn-redfin.com"],
+    domains: ["ssl.cdn-redfin.com","res.cloudinary.com", "img.icons8.com"],
   },
 };
 
