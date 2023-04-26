@@ -1,8 +1,6 @@
 import { Footer } from './components/Shared/Layout/Footer'
 import { Navbar } from './components/Shared/Layout/Navbar'
-import './globals.css'
-
-
+import '../../globals.css'
 
 export default function RootLayout({
   children,

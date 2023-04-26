@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 
-const Map = dynamic(() => import('../Map/Map'), { ssr: false })
+const Gallery = dynamic(() => import('../Gallery/Gallery'), { ssr: false })
 
-
-export default Map;
+export default Gallery;
