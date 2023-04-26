@@ -1,26 +1,20 @@
 
-// import { getHouse } from '@/app/lib/api/houses';
+import { getHouse } from '@/app/lib/api/houses';
 // import Image from 'next/image';
 // import Link from 'next/link';
 import Map from '../../components/Shared/Map';
-
-const getHouse = (id: string) => {
-    return fetch(`http://localhost:3000/houses/${id}`, { cache: "no-store" })
-        .then((res) => res.json())
-}
-
 
 export default async function page({ params }: any) {
 
     const { id } = params;
     const house = await getHouse(id);
 
-    const { title, price, location, description, photo_url, status, agent_id, HouseDetails } = house;
+    const { title, price, location, description, status, HouseDetails } = house;
 
     const { rooms, bathrooms, parking_lot, sq_mt } = HouseDetails;
 
     return (
-        <div className="grid grid-cols-1 gap-4 justify-between w-3/4 p-4 md:p-12">
+        <div className="grid grid-cols-1 gap-4 justify-between w-3/4 m-auto p-4">
             <div className="flex flex-col gap-2 w-full">
                 <div className="grid grid-rows-2 items-center grid-flow-col gap-4 w-full">
                     <div className="row-span-2 col-span-2 bg-yellow-200 rounded-md p-2 h-full">01</div>
@@ -78,8 +72,8 @@ export default async function page({ params }: any) {
                             <div className="rounded-full w-12 h-12 bg-rose-200">
                             </div>
                             <div className="flex flex-col">
-                                <span className="font-semibold">Ana Erika Vega Nolasco</span>
-                                <span>Asesor Inmobiliario</span>
+                                <span className="font-bold">Ana Erika Vega Nolasco</span>
+                                <span className='font-semibold'>Asesor Inmobiliario</span>
                             </div>
                         </div>
                     </div>

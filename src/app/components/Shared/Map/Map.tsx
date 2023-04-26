@@ -10,10 +10,6 @@ export default function Map() {
 
     const position: [number, number] = [19.238507286749293, -98.9105136133237];
 
-
-    //TODO: MARKER OBJECT DOES NOT APPEAR
-
-
     return (
         <MapContainer className='w-full h-80' center={[19.238507286749293, -98.9105136133237]} zoom={14} scrollWheelZoom={true}>
             <TileLayer
@@ -22,7 +18,7 @@ export default function Map() {
             />
             <Marker position={position}>
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    63QQ+MX, Manzana 023, San Mateo Huitzilzingo, 56625 Mixquic, Méx.
                 </Popup>
             </Marker>
         </MapContainer>

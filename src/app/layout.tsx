@@ -16,13 +16,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='flex flex-col h-screen justify-between'>
-        <div className='flex flex-col gap-4'>
+      <body className='flex flex-col gap-10 justify-between'>
+        <div className='flex flex-col gap-10'>
           <Navbar />
-          <div className='flex flex-row h-full justify-center'>
-            {/* <Sidebar /> */}
-            {children}
-          </div>
+          {children}
         </div>
         <Footer />
       </body>

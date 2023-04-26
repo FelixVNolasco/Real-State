@@ -1,27 +1,41 @@
 // import Image from 'next/image'
+import { BathIcon, ParkingCircle, LocateIcon, PersonStandingIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
-Image
 
 export default function HouseCard({ house }: { house: any }) {
 
-    const { ID, title, price, location, status, photo_url } = house;
+    const { ID, title, price, location, status, photo_url, HouseDetails } = house;
+    const { rooms, bathrooms, parking_lot, sq_mt } = HouseDetails;
 
     return (
-        <Link href={`/houses/${ID}`} className="relative w-80 p-2 flex flex-col">
+        <Link href={`/houses/${ID}`} className="relative w-auto p-2 flex flex-col">
             <Image src={photo_url} height={100} width={100} alt='' className='rounded-lg bg-slate-100 h-48 w-full mb-2' />             
             <div className="flex flex-col">
                 <div className="flex flex-col">
                     <span className='text-slate-800 font-semibold text-2xl'>{title}</span>
-                    <div className="flex text-slate-600 font-semibold">
-                        <span>🌏</span>
+                    <div className="flex items-center justify-start text-slate-600 font-semibold">
+                        <LocateIcon size={18}/> 
                         <span>{location}</span>
                     </div>
-                    <div className="flex gap-2 text-slate-500 font-semibold">
-                        <span>1 habitación</span>
-                        <span>1 baño</span>
-                        <span>45 m2</span>
+                    <div className="flex gap-1 justify-between text-slate-500 font-semibold">
+                        <div className="flex items-center">
+                            <span>{rooms}</span>
+                            <PersonStandingIcon size={18}/>
+                        </div>
+                        <div className="flex items-center">
+                            <span>{bathrooms}</span>
+                            <BathIcon size={18}/>
+                        </div>
+                        <div className="flex items-center">
+                            <span>{parking_lot}</span>
+                            <ParkingCircle size={18}/>
+
+                        </div>
+                        <div className="flex items-center">
+                            <span>{sq_mt}</span>
+                        </div>
                     </div>
                 </div>
             </div>
